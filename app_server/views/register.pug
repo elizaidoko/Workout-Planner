@@ -1,0 +1,50 @@
+extends layout
+block content
+  section.h-100
+  .row.d-flex.justify-content-center.align-items-center.h-100
+    .col
+      .card.card-registration.my-4
+        .row.g-0
+          .col-xl-6.d-none.d-xl-block
+            img.img-fluid(src='/images/workout.jpg' alt='Sample photo' style='border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; min-height:100%;')
+          .col-xl-6
+            .card-body.p-md-5.text-black
+              h3.mb-4.text-uppercase Register
+              form#register(action='/register' method='post')
+                .row
+                  .col-md-6.mb-4
+                    .form-outline
+                      input#firstName.form-control.form-control-lg(type='text' placeholder='First' name='firstName')
+                  .col-md-6.mb-4
+                    .form-outline
+                      input#lastName.form-control.form-control-lg(type='text' placeholder='Last' name='lastName')
+                .form-outline.mb-4
+                  input#email.form-control.form-control-lg(type='text' placeholder='Email' name='email')
+                .form-outline.mb-4
+                  input#password.form-control.form-control-lg(type='password' placeholder='Password' name='password')
+                .form-outline.mb-4
+                  input#confirmPassword.form-control.form-control-lg(type='password' placeholder='Confirm Password' name='confirmPassword')    
+                .d-md-flex.justify-content-start.align-items-center.mb-4.py-2
+                  h3.mb-0.me-4 Gender 
+                .form-check.form-check-inline.mb-0.me-4
+                  input#femaleGender.form-check-input(type='radio' name='inlineRadioOptions' value='F')
+                  label.form-check-label(for='femaleGender') Female
+                .form-check.form-check-inline.mb-0.me-4
+                  input#maleGender.form-check-input(type='radio' name='inlineRadioOptions' value='M')
+                  label.form-check-label(for='maleGender') Male
+                .form-check.form-check-inline.mb-4
+                  input#otherGender.form-check-input(type='radio' name='inlineRadioOptions' value='O')
+                  label.form-check-label(for='otherGender') Other
+                .form-outline.mb-4 
+                  h3.mb-4.py-2 Which option best suits your goal?
+                  select#goals(name='goals')
+                    option(value='1') Lose Weight
+                    option(value='2') Gain Muscle
+                    option(value='3') Maintain Fitness    
+                .d-flex.justify-content-center.pt-1
+                  button.btn.btn-warning.btn-lg.mb-2(type='submit') Sign Up
+                .d-flex.justify-content-center.pt-3
+                  p Already have an account?
+                .d-flex.justify-content-center
+                  a(href='/login') Login   
+  script(src='/javascripts/registerScript.js')
